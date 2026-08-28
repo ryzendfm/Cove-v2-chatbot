@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create account · Cove</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg: #FAF9F5;
@@ -20,6 +23,7 @@
             --btn-bg: #1D1C1A;
             --btn-fg: #FAF9F5;
         }
+
         html.dark {
             --bg: #151412;
             --fg: #F2F0EA;
@@ -31,7 +35,13 @@
             --btn-bg: #F2F0EA;
             --btn-fg: #151412;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
             background: var(--bg);
@@ -43,14 +53,42 @@
             padding: 24px;
             transition: background .25s, color .25s;
         }
-        .wrap { width: 100%; max-width: 380px; }
-        .mark { display: flex; align-items: center; gap: 10px; margin-bottom: 44px; }
-        .badge {
-            width: 30px; height: 30px; border-radius: 9px; background: var(--accent);
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+
+        .wrap {
+            width: 100%;
+            max-width: 380px;
         }
-        .badge svg { width: 16px; height: 16px; }
-        .mark span { font-family: "Changa One", sans-serif; font-weight: 400; font-size: 1.45rem; letter-spacing: -0.01em; }
+
+        .mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 44px;
+        }
+
+        .badge {
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .mark span {
+            font-family: "Changa One", sans-serif;
+            font-weight: 400;
+            font-size: 1.45rem;
+            letter-spacing: -0.01em;
+        }
+
         h1 {
             font-weight: 700;
             font-size: 2rem;
@@ -58,7 +96,13 @@
             letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
-        .sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 28px; }
+
+        .sub {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
         .msg {
             font-size: 0.85rem;
             color: var(--danger);
@@ -68,8 +112,19 @@
             border-radius: 10px;
             margin-bottom: 16px;
         }
-        label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
-        .field { margin-bottom: 16px; }
+
+        label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
         input {
             width: 100%;
             background: var(--card);
@@ -82,8 +137,15 @@
             outline: none;
             transition: border-color .15s;
         }
-        input:focus { border-color: var(--fg); }
-        input::placeholder { color: var(--muted); }
+
+        input:focus {
+            border-color: var(--fg);
+        }
+
+        input::placeholder {
+            color: var(--muted);
+        }
+
         button {
             width: 100%;
             background: var(--btn-bg);
@@ -98,44 +160,85 @@
             margin-top: 6px;
             transition: opacity .15s;
         }
-        button:hover { opacity: 0.85; }
-        .foot { text-align: center; font-size: 0.87rem; color: var(--muted); margin-top: 24px; }
-        .foot a { color: var(--fg); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--border); }
-        .foot a:hover { border-color: var(--fg); }
-        .theme-toggle {
-            position: fixed; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 8px;
-            border: 1px solid var(--border); background: var(--card); color: var(--fg);
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
+
+        button:hover {
+            opacity: 0.85;
         }
-        .theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .foot {
+            text-align: center;
+            font-size: 0.87rem;
+            color: var(--muted);
+            margin-top: 24px;
+        }
+
+        .foot a {
+            color: var(--fg);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .foot a:hover {
+            border-color: var(--fg);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--fg);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
     </style>
 </head>
+
 <body>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme" type="button">
-        <svg id="sunIcon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
-        <svg id="moonIcon" viewBox="0 0 24 24" style="display:none;"><path d="M12.3 2a10 10 0 0 0 9.7 11.5 10 10 0 1 1-11.5-9.7z"/></svg>
+        <svg id="sunIcon" viewBox="0 0 24 24">
+            <path
+                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24" style="display:none;">
+            <path d="M12.3 2a10 10 0 0 0 9.7 11.5 10 10 0 1 1-11.5-9.7z" />
+        </svg>
     </button>
 
     <div class="wrap">
-        <div class="mark">
+        <!-- <div class="mark">
             <div class="badge"><svg viewBox="0 0 32 32" fill="none"><path d="M4 21c3.5-5 7-5 10.5 0S21.5 26 25 21" stroke="var(--accent-fg)" stroke-width="3" stroke-linecap="round"/></svg></div>
             <span>Cove.</span>
-        </div>
+        </div> -->
 
         <h1>Create your account</h1>
         <p class="sub">Join Cove and start a conversation.</p>
 
         {% if messages %}
-            {% for message in messages %}
-            <p class="msg">{{ message }}</p>
-            {% endfor %}
+        {% for message in messages %}
+        <p class="msg">{{ message }}</p>
+        {% endfor %}
         {% endif %}
 
         <form method="POST" action="{% url 'signup' %}">
             {% csrf_token %}
             <div class="field">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Choose a username" required autocomplete="username">
+                <input type="text" id="username" name="username" placeholder="Choose a username" required
+                    autocomplete="username">
             </div>
             <div class="field">
                 <label for="email">Email</label>
@@ -143,11 +246,13 @@
             </div>
             <div class="field">
                 <label for="password1">Password</label>
-                <input type="password" id="password1" name="password1" placeholder="Create a password" required autocomplete="new-password">
+                <input type="password" id="password1" name="password1" placeholder="Create a password" required
+                    autocomplete="new-password">
             </div>
             <div class="field">
                 <label for="password2">Confirm password</label>
-                <input type="password" id="password2" name="password2" placeholder="Repeat password" required autocomplete="new-password">
+                <input type="password" id="password2" name="password2" placeholder="Repeat password" required
+                    autocomplete="new-password">
             </div>
             <button type="submit">Create account</button>
         </form>
@@ -157,7 +262,7 @@
 
     <script>
         const root = document.documentElement, btn = document.getElementById('themeBtn'),
-              sun = document.getElementById('sunIcon'), moon = document.getElementById('moonIcon');
+            sun = document.getElementById('sunIcon'), moon = document.getElementById('moonIcon');
         function applyTheme(dark) {
             root.classList.toggle('dark', dark);
             sun.style.display = dark ? 'block' : 'none';
@@ -171,4 +276,5 @@
         };
     </script>
 </body>
+
 </html>
